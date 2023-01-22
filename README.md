@@ -12,7 +12,7 @@
 
 ## İşaretlediğim yerleri fotoğraftaki gibi doldurun ve kaydedin.
 
-![image](https://user-images.githubusercontent.com/76253089/213945236-1e6c084a-b89e-45f5-b265-bc23e06669e4.png)
+![image](https://user-images.githubusercontent.com/76253089/213946416-b1e0ae8c-b64d-44ad-83e8-48087acd75b3.png)
 
 ## Şimdi Terminale gidip çıktıyı kontrol edelim. Alttaki komutu girin <br>
 ``docker logs quickstart-archaeologist-acme-companion-1``
