@@ -12,21 +12,53 @@
 
 ## İşaretlediğim yerleri fotoğraftaki gibi doldurun ve kaydedin.
 
-![image](https://user-images.githubusercontent.com/76253089/213946416-b1e0ae8c-b64d-44ad-83e8-48087acd75b3.png)
+![image](https://user-images.githubusercontent.com/76253089/214024667-88d51c70-1257-4d0b-9d50-991e48bdbad5.png)
 
-## Şimdi Terminale gidip çıktıyı kontrol edelim. Alttaki komutu girin <br>
-``docker logs quickstart-archaeologist-acme-companion-1``
+Arkadaşlar name service örneği `` ns1.sarcodomain.com.tr.`` şeklinde olacak. Sonuna nokta koymayı unutmayın..
 
-## Eğer çıktı Aşağıdaki şekildeyse hata var bu komutları uygulayıp tekrar kontrol edin.
+## Ekledikten sonra alttaki siteden kontrol edelim. Eğer sunucu ipniz gözüküyorsa başarılıdır.
+[Kontrol etme sitesi](https://www.nslookup.io/domains/ns1.enzifiri.me/dns-records/)
+
+![image](https://user-images.githubusercontent.com/76253089/214025396-252e01d8-33bc-42be-9020-742c6eeee4be.png)
+
+
+## Şimdi Terminale bağlanıp sunucunuzda bi kaç değişiklik yapmamız lazım.
+`` nano .env`` komutu ile aşağıdaki ekrana girin ve domain kısmını ns1li şekilde düzenleyin alttaki örneğe bakabilirsiniz. <br>
+Burda sonuna nokta koymayın. <br>
+Değişiklikleri kaydetmek için Ctrl + x + y + enter 
+![image](https://user-images.githubusercontent.com/76253089/214025844-3ff1690e-7694-4806-b42f-8e573c1ab0c3.png)
+
+## nano .env dosyasını düzenledikten sonra alttaki komutları girin
 
 ``cd quickstart-archaeologist`` <br>
+``docker compose exec -it archaeologist sh`` <br>
+``cli update -g`` <br>
+``exit`` <br>
 ``COMPOSE_PROFILES=service docker compose stop``  <br>
 ``COMPOSE_PROFILES=service docker compose pull`` <br>
 ``COMPOSE_PROFILES=service docker compose up -d`` <br>
 
-Hatalı çıktı örneği;
-![image](https://user-images.githubusercontent.com/76253089/213945576-7f26ac67-ad45-44d0-b9e1-74303ecd15d9.png)
+## Şimdi loglarımızı kontrol edelim.
 
-Başarılı çıktı örneği;
-![image](https://user-images.githubusercontent.com/76253089/213945770-d9f931c5-0854-42c0-9722-7735abc8cf71.png)
+`` docker container ls`` yazın ve en alttaki ngix-proxy containerini kontrol edelim <br>
+``docker logs containerid --follow`` container id kısmına ngix-proxy idsini girin
+![image](https://user-images.githubusercontent.com/76253089/214026601-256822aa-1180-498a-9ad2-907651a3cba2.png)
 
+Üstteki kırmızı yazılara takılmayın . Alttaki gibi çıktılar görüyosanız başarılıdır.
+![image](https://user-images.githubusercontent.com/76253089/214026905-4dd56b7e-42a9-4a1b-a57a-8f80a5824ce9.png)
+
+Şimdi diğer containeri kontrol edelim.
+`` docker container ls`` yazın ve en alttaki sarcophagus ile başlayan containerini kontrol edelim <br>
+``docker logs containerid --follow`` container id kısmına sarcopuacus idsini girin
+
+![image](https://user-images.githubusercontent.com/76253089/214027389-4ca6e5b0-1e72-4156-8f7c-b69089bb95d6.png)
+
+Loglarınız bu şekildeyse başarılıdır. Bu işlemi yaptıktan sonra biraz bekleyin loglar yavaş akıyor.
+![image](https://user-images.githubusercontent.com/76253089/214027566-8f54e0d7-9433-4ea9-aafc-8bf722f92224.png)
+
+## Bütün işlemleri yaptıktan sonra kontrol aşamasına geçelim alttaki siteye girin ve cüzdan adresinizi kontrol edin
+
+[Siteye gitmek için tıkla](https://dev-sarcophagus.netlify.app/archaeologists)
+
+Cüzdanınız gözüküyorsa tamamdır. Başardınız....
+![image](https://user-images.githubusercontent.com/76253089/214027859-8a91f2d6-2ef2-4943-8d1a-75de6cad8ddd.png)
