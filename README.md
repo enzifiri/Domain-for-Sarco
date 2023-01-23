@@ -6,7 +6,7 @@
 
 ![image](https://user-images.githubusercontent.com/76253089/213944894-318c0025-5b4e-4824-9962-83700cacf02e.png)
 
-## Soldaki NS OLUŞTURMA alanına gelin ve fotoğraftaki gibi doldurun.
+## Soldaki NS OLUŞTURMA alanına gelin ve fotoğraftaki gibi doldurun..
 
 ![image](https://user-images.githubusercontent.com/76253089/214102422-917902d4-5851-48ab-a03e-44a3cd78604b.png)
 
